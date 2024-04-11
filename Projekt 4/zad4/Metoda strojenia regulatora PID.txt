@@ -1,0 +1,57 @@
+Zastosowano zmodyfikowaną metodę inżynierską:
+1. Wyłączamy wszystkie regulatory
+K=[0 0 0];
+    Ti=[inf inf inf];
+    Td=[0 0 0];
+
+2. Dobieramy tak duże wzmocnienie dla pierwszego regulatora dopóki na żadnym wyjściu nie 
+wystąpi przeregulowanie bądź wystąpi bardzo małe oraz nie zniekształcimy za bardzo sygnału wyjścia
+K=[13 0 0];
+    Ti=[inf inf inf];
+    Td=[0 0 0];
+
+3. Dobieramy tak duże wzmocnienie dla drugiego i trzeciego regulatora pozostawiając poprzednie regulatory 
+włączone oraz kierujemy się takim samym kryterium dobierania wzmocnienia
+K=[13 0.1 0.4];
+    Ti=[inf inf inf];
+    Td=[0 0 0];
+4. Następnie dobieramy czas zdwojenia dla pierwszego regulatora tak, aby zmniejszyć uchyb ustalony 
+pamiętając, by nie wystąpiły drastyczne zniekształcenia przebiegu sygnałów wyjściowych oraz aby nie wystąpiły oscylacje
+K=[13 0.1 0.4];
+    Ti=[10 inf inf];
+    Td=[0 0 0];
+5. Tak samo postępujemy dla drugiego i trzeciego regulatora pamiętając o tym, że poprzednie regulatory mają być włączone
+oraz kierujemy się powyższym kryterium dobierania czasu zdwojenia
+K=[13 0.1 0.4];
+    Ti=[10 3 2];
+    Td=[0 0 0];
+6. Następnie dla każdego regulatora dobieramy kolejno Td, tak aby zmniejszyć wskaźnik E oraz tak, aby nie wystąpiły
+zbyt szybkie i zbyt długo utrzymujące się zmiany sygnału wyjścia oraz widzimi, że następuje poprawa regulacji
+K=[13 0.1 0.4];
+    Ti=[10 3 2];
+    Td=[0 1 0];
+7. Postępujemy analogicznie dla kolejnych wersji regulatora PID
+
+
+
+PID wersja 1:
+
+    K=[13 0.1 0.4];
+    Ti=[10 3 2];
+    Td=[0 1 0];
+
+
+PID wersja 2:
+
+    K=[5.5 0.3 0.4];
+    Ti=[3 6 8];
+    Td=[0 1 0];
+
+
+PID wersja 3:
+
+    K=[5.5 0.3 0.2];
+    Ti=[4 5 2];
+    Td=[0 1.2 0];
+
+

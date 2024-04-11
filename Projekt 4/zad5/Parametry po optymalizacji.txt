@@ -1,0 +1,37 @@
+Dla DMC przyjęto stałe parametry:
+N=10
+Nu=1
+D=300
+
+PID:
+	Wersja 1:
+	options = optimoptions("ga","MaxGenerations",500,"MaxStallGenerations",50)
+	ga(@pidmin, 9, [], [], [], [], [0.1, 0.1, 0.1, 2, 2, 2, 0, 0, 0], [13,13,13,10,10,10,1,1,1], [], [], options)
+	K = [5.6442    2.8465    0.6871]        
+	Ti = [6.6078    8.0950    2.0000]
+	Td = [0.0907    0.0441    0.0027]
+
+	Wersja 2:
+	options = optimoptions("ga","MaxGenerations",500,"MaxStallGenerations",50)
+	ga(@pidmin, 9, [], [], [], [], [0.3, 0.3, 0.3, 3, 3, 3, 0, 0, 0], [5.5,5.5,5.5,8,8,8,1,1,1], [], [], options)
+	K = [5.5000    2.8558    0.8900]        
+	Ti = [6.2659    7.9843    3.0001]
+	Td = [0.1012    0.0095    0.0002]
+
+	Wersja 3:
+	options = optimoptions("ga","MaxGenerations",500,"MaxStallGenerations",50)
+	ga(@pidmin, 9, [], [], [], [], [0.2, 0.2, 0.2, 2, 2, 2, 0, 0, 0], [5.5,5.5,5.5,5,5,5,1.2,1.2,1.2], [], [], options)     
+	K = [5.0362    2.7383    0.7049]        
+	Ti = [5.0000    5.0000    2.0001]
+	Td = [0.1509    0.0528    0.0005]
+
+DMC:
+	fmincon(@dmcmin, [1,1,1,1,1,1,1], [], [])
+                       
+mi1=0.5478
+mi2=9.9498
+mi3=2.5941
+lambda1=0.0282
+lambda2=4.4605
+lambda3=6.3088
+lambda4=-0.0977

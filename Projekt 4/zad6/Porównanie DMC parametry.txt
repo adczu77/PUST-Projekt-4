@@ -1,0 +1,5 @@
+D=300
+N=D
+Nu=D
+lambdy=1
+mi=1

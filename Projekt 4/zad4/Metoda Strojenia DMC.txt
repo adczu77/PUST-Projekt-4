@@ -1,0 +1,5 @@
+1. Ustawiamy D=300 oraz N=Nu=D
+2. Zmniejszamy N dopóki zauważymy pogorszenie regulacji
+3. Zmniejszamy Nu dopóki zauważymy pogorszenie regulacji
+4. Wybieramy dany zestaw parametrów w zależności od wskaźnika E oraz kształtu przebiegu
+5. przez cały proces parametry lambda i mi wynosiły 1 - później zostaną dobrane w wyniku optymalizacja wskaźnika E

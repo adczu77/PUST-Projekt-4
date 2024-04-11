@@ -1,0 +1,19 @@
+największe wpływy:
+y1 - u1/u4
+y2 - u2
+y3 - u1/u3
+
+wersja nr 1:
+u1 na e1
+u2 na e2
+u3 na e3
+
+wersja nr 2:
+u4 na e1
+u2 na e2
+u1 na e3
+
+wersja nr 3:
+u4 na e1
+u2 na e2
+u3 na e3
